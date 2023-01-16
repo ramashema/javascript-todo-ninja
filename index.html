@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript TODO Ninja</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        #addTodoButton{
+            color: black;
+            border: 1px solid #9999;
+        }
+
+        #addTodoButton:hover{
+            background-color: #9999;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3 mt-5">
+                <h5 class="mb-3">Ninja Tasks List</h5>
+                <form id="addForm">
+                        <div class="row">
+
+                            <div class="col-8">
+                                <input type="text" id="addTodoInput" name="addTodoInput" class="form-control">
+                            </div>
+
+                            <div class="col-2">
+                                <input type="submit" id="addTodoButton" class="btn btn-outline-light" value="Add">
+                            </div>
+                        </div>
+                </form>
+                <div id="tasksList"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        const taskAddForm = document.querySelector("#addForm");
+        const addTodoInput = document.querySelector("#addTodoInput");
+
+        taskAddForm.addEventListener("submit", () => {
+            let value = addTodoInput.value
+            const pattern = /^$/;
+            if(pattern.test(value)){
+                alert("You should submit valid value in the form")
+            }
+        })
+    </script>
+</body>
+</html>
